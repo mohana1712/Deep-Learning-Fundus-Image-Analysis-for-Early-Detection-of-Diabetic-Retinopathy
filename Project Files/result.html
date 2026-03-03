@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+
+        body {
+            margin: 0;
+            font-family: 'Segoe UI', sans-serif;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(135deg, #000428, #004e92);
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 40px;
+            width: 450px;
+            border-radius: 15px;
+            backdrop-filter: blur(15px);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.3);
+            text-align: center;
+            color: white;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+
+        .result {
+            font-size: 22px;
+            margin-bottom: 20px;
+            padding: 10px;
+            background: rgba(255,255,255,0.2);
+            border-radius: 8px;
+        }
+
+        img {
+            width: 250px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 0 15px rgba(255,255,255,0.4);
+        }
+
+        button {
+            background: linear-gradient(to right, #ff416c, #ff4b2b);
+            border: none;
+            padding: 12px;
+            width: 100%;
+            border-radius: 8px;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px rgba(255,75,43,0.6);
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h1>Prediction Result</h1>
+
+    <img src="{{ img_path }}">
+
+    <div class="result">
+        Predicted Stage: <strong>{{ prediction }}</strong>
+    </div>
+
+    <a href="{{ url_for('home') }}">
+        <button>Analyze Another Image</button>
+    </a>
+</div>
+
+</body>
+</html>
